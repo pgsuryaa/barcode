@@ -1211,7 +1211,7 @@
 		function i(t) {
 			var e;
 			if ("VideoStream" === $.inputStream.type) e = document.createElement("video"),
-			e.setAttribute("playsinline"),//, true),
+			e.setAttribute("playsinline",""),//, true),
 			//e.setAttribute("controls", true),
 			w = V.a.createVideoStream(e);
 			else if ("ImageStream" === $.inputStream.type) w = V.a.createImageStream();
@@ -2006,7 +2006,7 @@
 		function o(t, e) {
 			return n.i(l.a)(e).then(function(e) {
 				return new Promise(function(n) {
-					c = e, t.setAttribute("autoplay", "true"), t.setAttribute("playsinline"), t.srcObject = e, t.addEventListener("loadedmetadata", function() {
+					c = e, t.setAttribute("autoplay", "true"), t.setAttribute("playsinline",""), t.srcObject = e, t.addEventListener("loadedmetadata", function() {
 						t.play(), n()
 					})
 				})
@@ -2305,7 +2305,7 @@
 			}, o
 		}, o.createLiveStream = function(t) {
 			t.setAttribute("autoplay", !0);
-			t.setAttribute("playsinline"),//, true);
+			t.setAttribute("playsinline","");//, true);
 			//t.setAttribute("controls", true);
 			var e = o.createVideoStream(t);
 			return e.ended = function() {
